@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatAI By Dhruv</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="script.js" defer></script>
+    <link rel="icon" href="images/gemini.png" type="image/png">
+</head>
+<body>
+    <!--Header Section-->
+    <header class="header">
+        <!--Header Greetings-->
+        <h2 class="title">Hello, there</h2>
+        <h4 class="subtitle">How can I help you today.?</h4>
+
+        <!--Suggestion List-->
+        <ul class="suggestion-list">
+            <li class="suggestion">
+                <h4 class="text">Outline an organized & logical sales pitch for a new product</h4>
+                <span class="icon material-symbols-rounded">monitoring</span>
+            </li>
+            <li class="suggestion">
+                <h4 class="text">Create a 12-week study plan for learning a new language</h4>
+                <span class="icon material-symbols-rounded">schedule</span>
+            </li>
+            <li class="suggestion">
+                <h4 class="text">Find the best running trails nearby</h4>
+                <span class="icon material-symbols-rounded">sprint</span>
+            </li>
+            <li class="suggestion">
+                <h4 class="text">Write lyrics to a song about heartbreak</h4>
+                <span class="icon material-symbols-rounded">lyrics</span>
+            </li>
+        </ul>
+    </header>
+
+    <!--Chat List container-->
+    <div class="chat-list"></div>
+
+    <!--Typing Area-->
+    <div class="typing-area">
+        <form action="#" class="typing-form">
+            <div class="input-wrapper">
+                <input type="text" placeholder="Enter a prompt here..." class="typing-input" required>
+                <button class="icon material-symbols-rounded">send</button>
+            </div>
+            <div class="action-buttons">
+                <span id="toggle-theme-button" class="icon material-symbols-rounded">light_mode</span>
+                <span id="delete-chat-button" class="icon material-symbols-rounded">delete</span>
+            </div>
+        </form>
+        <p class="disclaimer-text">
+            Disclaimer: This is a demo project created by <a class="about-me" href="https://akagamikaizoku.me/">Dhruv.</a>
+            Gemini may display inaccurate info, including about people, so double-check it's responses.
+            Hover over the generated text to copy.
+        </p>
+    </div>
+</body>
+</html>
