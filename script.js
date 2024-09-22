@@ -7,7 +7,7 @@ const deleteChatButton = document.querySelector('#delete-chat-button');
 let userMessage =  null;
 let isResponseGenerating = false;
 
-const API_KEY = '';
+const API_KEY = process.env.API_KEY;
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
 
 const loadLocalStorageData = () => {
@@ -53,7 +53,7 @@ const showTypingEffect = (text, textElement, incomingMessageDiv) => {
 const generateAPIResponse = async (incomingMessageDiv) => {
     const textElement = incomingMessageDiv.querySelector('.text');
     try{
-        const response = await fetch(/api/getData, {
+        const response = await fetch(API_URL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
