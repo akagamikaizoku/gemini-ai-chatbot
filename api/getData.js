@@ -1,14 +1,27 @@
-// api/getData.js
 export default async function handler(req, res) {
-  const API_KEY = process.env.API_KEY; // Access the API key from environment variables
-  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`; // Replace with your actual API URL
+  const API_KEY = process.env.API_KEY; // Make sure this is set correctly
+  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`; // Use your actual API URL
 
   try {
     const response = await fetch(apiUrl);
-    const data = await response.json();
+    
+    // Check if the response is OK (status in the range 200-299)
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
 
-    // Respond with the data
-    res.status(200).json(data);
+    // Attempt to parse the response as JSON
+    const text = await response.text(); // Read response as text
+    let data;
+
+    // Try to parse text as JSON, catch errors
+    try {
+      data = JSON.parse(text);
+    } catch (jsonError) {
+      throw new Error('Response is not valid JSON');
+    }
+
+    res.status(200).json(data); // Send the data back to the frontend
   } catch (error) {
     res.status(500).json({ message: 'Error fetching data', error: error.message });
   }
