@@ -8,7 +8,7 @@ require('dotenv').config();
 let userMessage =  null;
 let isResponseGenerating = false;
 
-const API_KEY = process.env.api_key;
+const API_KEY = 'AIzaSyAqkwpyBtPuB1Hsyyz_XTccBa9D19fHVY4';
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
 
 const loadLocalStorageData = () => {
