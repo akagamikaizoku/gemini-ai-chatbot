@@ -3,7 +3,6 @@ const chatList = document.querySelector('.chat-list');
 const suggestions = document.querySelectorAll('.suggestion-list .suggestion');
 const toggleThemeButton = document.querySelector('#toggle-theme-button');
 const deleteChatButton = document.querySelector('#delete-chat-button');
-require('dotenv').config();
 
 let userMessage =  null;
 let isResponseGenerating = false;
