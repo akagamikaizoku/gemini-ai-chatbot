@@ -3,11 +3,12 @@ const chatList = document.querySelector('.chat-list');
 const suggestions = document.querySelectorAll('.suggestion-list .suggestion');
 const toggleThemeButton = document.querySelector('#toggle-theme-button');
 const deleteChatButton = document.querySelector('#delete-chat-button');
+require('dotenv').config();
 
 let userMessage =  null;
 let isResponseGenerating = false;
 
-const API_KEY = 'AIzaSyAqkwpyBtPuB1Hsyyz_XTccBa9D19fHVY4';
+const API_KEY = process.env.api_key;
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
 
 const loadLocalStorageData = () => {
