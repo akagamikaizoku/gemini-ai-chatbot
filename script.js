@@ -53,7 +53,7 @@ const showTypingEffect = (text, textElement, incomingMessageDiv) => {
 const generateAPIResponse = async (incomingMessageDiv) => {
     const textElement = incomingMessageDiv.querySelector('.text');
     try{
-        const response = await fetch(API_URL, {
+        const response = await fetch(/api/getData, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
